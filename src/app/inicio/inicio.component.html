@@ -1,26 +1,12 @@
-<mat-grid-list cols="3" rowHeight="200px">
-        <mat-grid-tile [colspan]="1" [rowspan]="1" >
-            <div class="col-md-12 pad-10">
-                <button type="submit" mat-raised-button color="primary"  class="btn btn-primary" (click)="goToAddEndereco()">
-                <span class="glyphicon glyphicon-floppy-disk"></span> Cadastro de Endereço
-                </button>
-            </div>
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-            <div class="col-md-12 pad-10">
-                    <button type="submit" color="primary" mat-raised-button color="primary" class="btn btn-primary" (click)="goToAddCasa()">
-                    <span class="glyphicon glyphicon-floppy-disk"></span> Cadastro de Casa
-                    </button>
-            </div>      
-        </mat-grid-tile>
-        <mat-grid-tile [colspan]="1" [rowspan]="1">
-            <div class="col-md-12 pad-10">
-                    <button type="submit" color="primary" mat-raised-button color="primary" class="btn btn-primary" (click)="goToAddApartamento()">
-                    <span class="glyphicon glyphicon-floppy-disk"></span> Cadastro de Apartamento
-                    </button>
-            </div>      
-        </mat-grid-tile>
-    </mat-grid-list>
+<mat-grid-list cols="1" rowHeight="100px">
+    <mat-grid-tile [colspan]="1" [rowspan]="1" >
+        <div class="col-md-12 pad-10">
+            <button type="submit" color="primary" mat-raised-button color="primary" class="btn btn-primary" (click)="goToAddReserva()">
+            <span class="glyphicon glyphicon-floppy-disk"></span> Faça sua reserva!
+            </button>
+        </div>    
+    </mat-grid-tile>
+</mat-grid-list>
 <!--
 <mat-grid-list cols="2" rowHeight="100px">
     <mat-grid-tile [colspan]="1" [rowspan]="1" [style.background]="'lightblue'">

@@ -34,16 +34,9 @@ export class InicioComponent implements OnInit {
 
   constructor(private router: Router,private breakpointObserver: BreakpointObserver) { }
 
-  goToAddEndereco () {
-    this.router.navigateByUrl('/endereco-create');
-  }
 
-  goToAddCasa () {
-    this.router.navigateByUrl('/casa-create');
-  }
-
-  goToAddApartamento() {
-    this.router.navigateByUrl('/apartamento-create');
+  goToAddReserva() {
+    this.router.navigateByUrl('/reserva-create');
   }
 
   ngOnInit() {
