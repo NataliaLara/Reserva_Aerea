@@ -1,0 +1,43 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" (click)="passagemaereaDetails()"><mat-icon>show</mat-icon></a>
+</div>
+<form [formGroup]="passagemaereaForm" (ngSubmit)="onFormSubmit(passagemaereaForm.value)">
+  
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Código" formControlName="codigo"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!passagemaereaForm.get('codigo').valid && passagemaereaForm.get('codigo').touched">Código</span>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Preço" formControlName="preco"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!passagemaereaForm.get('preco').valid && passagemaereaForm.get('preco').touched">Preço</span>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Ida</mat-label>
+    <mat-select formControlName="vooIda">
+      <mat-option  *ngFor="let vooIda of idas" [value]="vooIda">
+        {{vooIda.dataPartida}} - {{vooIda.Chegada}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Volta</mat-label>
+    <mat-select formControlName="vooVolta">
+      <mat-option  *ngFor="let vooVolta of voltas" [value]="vooVolta">
+        {{vooVolta.dataPartida}} - {{vooVolta.Chegada}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>  
+  
+  <div class="button-row">
+    <button type="submit" [disabled]="!passagemaereaForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>
+  </div>
+</form>

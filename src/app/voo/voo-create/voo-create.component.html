@@ -1,0 +1,71 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/voos']"><mat-icon>list</mat-icon></a>
+</div>
+<form [formGroup]="vooForm" (ngSubmit)="onFormSubmit(vooForm.value)">
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Número" formControlName="numero"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!vooForm.get('numero').valid && vooForm.get('numero').touched">Número</span>
+    </mat-error>
+  </mat-form-field>
+
+  <div class="ui-g-12 ui-md-4">
+    <h3>Data de Partida</h3>
+    <p-calendar [(ngModel)]="dataPartida" [showTime]="true" formControlName="dataPartida"></p-calendar>
+  </div>
+
+  <div class="ui-g-12 ui-md-4">
+    <h3>Data de Chegada</h3>
+    <p-calendar [(ngModel)]="dataChegada" [showTime]="true" formControlName="dataChegada"></p-calendar>
+  </div>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Passagens Disponíveis" formControlName="passagensDisp"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!vooForm.get('passagensDisp').valid && vooForm.get('passagensDisp').touched">Passagens Disponíveis</span>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Origem</mat-label>
+    <mat-select formControlName="origem">
+      <mat-option  *ngFor="let origem of origens" [value]="origem">
+        {{origem.cidade}}
+        ({{origem.siglaestado}})-{{origem.pais}}   
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Destino</mat-label>
+    <mat-select formControlName="destino">
+      <mat-option  *ngFor="let destino of destinos" [value]="destino">
+        {{destino.cidade}}
+        ({{destino.siglaestado}})-{{destino.pais}}   
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+
+<!--
+  <mat-form-field >
+    <input matInput [matDatepicker]="picker" placeholder="Data de partida" formControlName="dataPartida">
+    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+
+  <mat-form-field >
+    <input matInput [matDatepicker]="picker2" placeholder="Data de chegada" formControlName="dataChegada">
+    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+    <mat-datepicker #picker></mat-datepicker>
+  </mat-form-field>
+-->
+  
+  
+  <div class="button-row">
+    <button type="submit" [disabled]="!vooForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>
+  </div>
+</form>

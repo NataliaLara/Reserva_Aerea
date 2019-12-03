@@ -1,0 +1,24 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/reservas']"><mat-icon>list</mat-icon></a>
+</div>
+<mat-card class="example-card">
+  
+  <mat-card-content>
+    <dl>
+      <dt>Quant. pessoas:</dt>
+      <dd>{{reserva.pessoas}}</dd>
+      <dt>Data de Ida:</dt>
+      <dd>{{reserva.dataIda}}</dd>
+      <dt>Data de Volta:</dt>
+      <dd>{{reserva.dataVolta}}</dd>
+      <dt>Cidade origem:</dt>
+      <dd>{{reserva.origem.cidade}}</dd>
+      <dt>Cidade destino:</dt>
+      <dd>{{reserva.destino.cidade}}</dd>
+    </dl>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button color="primary" [routerLink]="['/reserva-edit', reserva._id]"><mat-icon>edit</mat-icon></a>
+    <a mat-raised-button color="warn" (click)="deleteReserva(reserva._id)"><mat-icon>delete</mat-icon></a>
+  </mat-card-actions>
+</mat-card>

@@ -1,0 +1,27 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/casas']"><mat-icon>list</mat-icon></a>
+</div>
+
+<mat-card class="example-card">
+  <mat-card-content>
+    <dl>
+      <dt>Qtd. quartos: {{casa.quartos}}</dt>
+      <dt>Qtd. suítes: {{casa.suites}}</dt>
+      <dt>Qtd. salas de estar: {{casa.sala_estar}}</dt>
+      <dt>Nro de vagas na garagem: {{casa.vagas}}</dt>
+      <dt>Área (em metros quadrados): {{casa.area}}</dt>
+      <dt>Possui armário embutido: {{getBoolValue(casa.armario_embutido)}}</dt>      
+      <dt>Descrição: </dt>
+      <dd>{{casa.descricao}}</dd>
+      <dt>Endereço Completo:</dt>
+      <dt>{{casa.rua}},{{casa.numero}}</dt>
+      <dt>Bairro: {{casa.endereco.bairro}}</dt>
+      <dt>Cidade: {{casa.endereco.cidade}}-{{casa.endereco.siglaestado}}</dt>
+      <dt>Valor do aluguel: R$ {{casa.valoraluguel}}</dt>
+    </dl>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button color="primary" [routerLink]="['/casa-edit', casa._id]"><mat-icon>edit</mat-icon></a>
+    <a mat-raised-button color="warn" (click)="deleteCasa(casa._id)"><mat-icon>delete</mat-icon></a>
+  </mat-card-actions>
+</mat-card>

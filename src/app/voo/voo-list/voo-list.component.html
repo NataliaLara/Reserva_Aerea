@@ -1,0 +1,46 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/voo-create']"><mat-icon>add</mat-icon></a>
+</div>
+<div class="example-container mat-elevation-z8">
+  <table mat-table #table [dataSource]="dataSource">
+
+    <!--- Note that these columns can be defined in any order.
+          The actual rendered columns are set as a property on the row definition" -->
+
+    <!-- Title Column -->
+    <ng-container matColumnDef="numero">
+      <th mat-header-cell *matHeaderCellDef> Número </th>
+      <td mat-cell *matCellDef="let element"> {{element.numero}} </td>
+    </ng-container>
+
+    <!-- Title Column -->
+    <ng-container matColumnDef="dataPartida">
+      <th mat-header-cell *matHeaderCellDef> Data de Partida</th>
+      <td mat-cell *matCellDef="let element"> {{element.dataPartida| date:"dd/MM/yyyy HH:mm"}} </td>
+    </ng-container>
+
+    <!-- Author Column -->
+    <ng-container matColumnDef="dataChegada">
+      <th mat-header-cell *matHeaderCellDef>Data de Chegada</th>
+      <td mat-cell *matCellDef="let element"> {{element.dataChegada|date:"dd/MM/yyyy HH:mm"}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="passagensDisp">
+      <th mat-header-cell *matHeaderCellDef> Passagens Disponíveis </th>
+      <td mat-cell *matCellDef="let element"> {{element.passagensDisp}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="origem">
+      <th mat-header-cell *matHeaderCellDef> Origem </th>
+      <td mat-cell *matCellDef="let element"> {{element.origem.cidade}}({{element.origem.siglaestado}}) </td>
+    </ng-container>
+
+    <ng-container matColumnDef="destino">
+      <th mat-header-cell *matHeaderCellDef> Destino </th>
+      <td mat-cell *matCellDef="let element"> {{element.destino.cidade}}({{element.destino.siglaestado}}) </td>
+    </ng-container>
+
+    <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
+    <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/voo-details/', row._id]"></tr>
+  </table>
+</div>

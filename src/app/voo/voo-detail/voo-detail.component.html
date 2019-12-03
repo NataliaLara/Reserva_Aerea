@@ -1,0 +1,26 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/voos']"><mat-icon>list</mat-icon></a>
+</div>
+<mat-card class="example-card">
+  
+  <mat-card-content>
+    <dl>
+      <dt>Número:</dt>
+      <dd>{{voo.numero}}</dd>
+      <dt>Data de Partida:</dt>
+      <dd>{{voo.dataPartida| date:"dd/MM/yyyy HH:mm"}}</dd>
+      <dt>Data de Chegada:</dt>
+      <dd>{{voo.dataChegada| date:"dd/MM/yyyy HH:mm"}}</dd>
+      <dt>Passagens Disponíveis:</dt>
+      <dd>{{voo.passagensDisp}}</dd>
+      <dt>Origem:</dt>
+      <dd>{{voo.origem.cidade}}({{voo.origem.siglaestado}})</dd>
+      <dt>Destino:</dt>
+      <dd>{{voo.destino.cidade}}({{voo.destino.siglaestado}})</dd>
+    </dl>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button color="primary" [routerLink]="['/voo-edit', voo._id]"><mat-icon>edit</mat-icon></a>
+    <a mat-raised-button color="warn" (click)="deleteVoo(voo._id)"><mat-icon>delete</mat-icon></a>
+  </mat-card-actions>
+</mat-card>

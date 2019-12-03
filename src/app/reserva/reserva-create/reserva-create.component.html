@@ -1,0 +1,46 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/reservas']"><mat-icon>list</mat-icon></a>
+</div>
+<form [formGroup]="reservaForm" (ngSubmit)="onFormSubmit(reservaForm.value)">
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Pessoas" formControlName="pessoas"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!reservaForm.get('pessoas').valid && reservaForm.get('pessoas').touched">Pessoas</span>
+    </mat-error>
+  </mat-form-field>
+
+  <div class="ui-g-12 ui-md-4">
+      <h3>Data de ida</h3>
+      <p-calendar [(ngModel)]="dataIda" formControlName="dataIda"></p-calendar>
+  </div>
+
+  <div class="ui-g-12 ui-md-4">
+    <h3>Data de volta</h3>
+    <p-calendar [(ngModel)]="dataVolta" formControlName="dataVolta"></p-calendar>
+  </div>
+
+  <mat-form-field>
+    <mat-label>Cidade Origem</mat-label>
+    <mat-select formControlName="origem">
+      <mat-option  *ngFor="let origem of origens" [value]="origem">
+        {{origem.cidade}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+
+  <mat-form-field>
+    <mat-label>Destino</mat-label>
+    <mat-select formControlName="destino">
+      <mat-option  *ngFor="let destino of destinos" [value]="destino">
+        {{destino.cidade}}
+      </mat-option>
+    </mat-select>
+  </mat-form-field>
+  
+  
+  <div class="button-row">
+    <button type="submit" [disabled]="!reservaForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>
+  </div>
+</form>
