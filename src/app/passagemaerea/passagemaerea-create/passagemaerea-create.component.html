@@ -1,5 +1,5 @@
 <div class="button-row">
-  <a mat-raised-button color="primary" [routerLink]="['/passagemaereas']"><mat-icon>list</mat-icon></a>
+  <a mat-raised-button color="primary" [routerLink]="['/passagensaereas']"><mat-icon>list</mat-icon></a>
 </div>
 <form [formGroup]="passagemaereaForm" (ngSubmit)="onFormSubmit(passagemaereaForm.value)">
 
@@ -20,22 +20,13 @@
   </mat-form-field>
 
   <mat-form-field>
-    <mat-label>Ida</mat-label>
-    <mat-select formControlName="vooIda">
-      <mat-option  *ngFor="let vooIda of idas" [value]="vooIda">
-        {{vooIda.dataPartida| date:"dd/MM/yyyy HH:mm"}} - {{vooIda.dataChegada | date:"dd/MM/yyyy HH:mm"}}
+    <mat-label>Voo</mat-label>
+    <mat-select formControlName="voo">
+      <mat-option  *ngFor="let voo of voos" [value]="voo">
+        {{voo.dataPartida| date:"dd/MM/yyyy HH:mm"}} - {{voo.dataChegada | date:"dd/MM/yyyy HH:mm"}}
       </mat-option>
     </mat-select>
   </mat-form-field>
-
-  <mat-form-field>
-    <mat-label>Volta</mat-label>
-    <mat-select formControlName="vooVolta">
-      <mat-option  *ngFor="let vooVolta of voltas" [value]="vooVolta">
-        {{vooVolta.dataPartida| date:"dd/MM/yyyy HH:mm"}} - {{vooVolta.dataChegada | date:"dd/MM/yyyy HH:mm"}}
-      </mat-option>
-    </mat-select>
-  </mat-form-field>  
   
   <div class="button-row">
     <button type="submit" [disabled]="!passagemaereaForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>

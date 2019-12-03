@@ -9,16 +9,13 @@
       <dd>{{passagemaerea.codigo}}</dd>
       <dt>Preco:</dt>
       <dd>{{passagemaerea.preco}}</dd>
-      <dt>Ida:</dt>
-      <dd>{{passagemaerea.vooIda.dataPartida| date:"dd/MM/yyyy HH:mm"}}</dd>
-      <dd>{{passagemaerea.vooIda.dataChegada| date:"dd/MM/yyyy HH:mm"}}</dd>
-      <dt>Volta:</dt>
-      <dd>{{passagemaerea.vooVolta.dataPartida| date:"dd/MM/yyyy HH:mm"}}</dd>
-      <dd>{{passagemaerea.vooVolta.dataChegada| date:"dd/MM/yyyy HH:mm"}}</dd>
+      <dt>Voo:</dt>
+      <dd>{{passagemaerea.voo.dataPartida| date:"dd/MM/yyyy HH:mm"}}</dd>
+      <dd>{{passagemaerea.voo.dataChegada| date:"dd/MM/yyyy HH:mm"}}</dd>
       <dt>Cidade origem:</dt>
-      <dd>{{passagemaerea.vooIda.origem.cidade}}</dd>
+      <dd>{{passagemaerea.voo.origem.cidade}}</dd>
       <dt>Cidade destino:</dt>
-      <dd>{{passagemaerea.vooIda.destino.cidade}}</dd>
+      <dd>{{passagemaerea.voo.destino.cidade}}</dd>
     </dl>
   </mat-card-content>
   <mat-card-actions>

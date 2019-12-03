@@ -1,5 +1,6 @@
 <div class="button-row">
   <a mat-raised-button color="primary" [routerLink]="['/voos']"><mat-icon>list</mat-icon></a>
+  Voos
 </div>
 <form [formGroup]="vooForm" (ngSubmit)="onFormSubmit(vooForm.value)">
 
@@ -11,15 +12,17 @@
     </mat-error>
   </mat-form-field>
 
-  <div class="ui-g-12 ui-md-4">
-    <h3>Data de Partida</h3>
-    <p-calendar [(ngModel)]="dataPartida" [showTime]="true" formControlName="dataPartida"></p-calendar>
-  </div>
-
-  <div class="ui-g-12 ui-md-4">
-    <h3>Data de Chegada</h3>
-    <p-calendar [(ngModel)]="dataChegada" [showTime]="true" formControlName="dataChegada"></p-calendar>
-  </div>
+  <mat-form-field class="example-full-width">
+      <input matInput [matDatepicker]="picker" formControlName="dataPartida" placeholder="Data de partida">
+      <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
+      <mat-datepicker #picker></mat-datepicker>
+    </mat-form-field>
+  
+    <mat-form-field class="example-full-width">
+      <input matInput [matDatepicker]="picker2" formControlName="dataChegada" placeholder="Data de chegada">
+      <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
+      <mat-datepicker #picker2></mat-datepicker>
+    </mat-form-field>
 
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Passagens Disponíveis" formControlName="passagensDisp"

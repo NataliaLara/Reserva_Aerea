@@ -13,31 +13,12 @@ import{VooService} from '../../voo/voo.service';
 export class PassagemAereaEditComponent implements OnInit {
 
   id:string = '';
-  idas:any;
-  voltas:any;
+  voos:any;
   passagemaereaForm: FormGroup;
   codigo:Number;
   preco: Number;
 
-  vooIda:{
-    numero: Number,
-    dataPartida: Date,
-    dataChegada: Date,
-    passagensDisp: Number,
-    origem:{
-      pais: { type: String, default: 'Brasil' },
-      cidade: { type: String, default: 'São Paulo' },
-      estado: { type: String, default: 'São Paulo' },
-      siglaestado: { type: String, default: 'SP' }
-    },
-    destino:{
-      pais: { type: String, default: 'Brasil' },
-      cidade: { type: String, default: 'Belo Horizonte' },
-      estado: { type: String, default: 'Minas Gerais' },
-      siglaestado: { type: String, default: 'MG' }
-    }
-  };
-  vooVolta:{
+  voo:{
     numero: Number,
     dataPartida: Date,
     dataChegada: Date,
@@ -62,8 +43,7 @@ export class PassagemAereaEditComponent implements OnInit {
       this.vooService.getVoos()
       .subscribe(res => {
         console.log(res);
-        this.idas = res;
-        this.voltas = res;
+        this.voos = res;
       }, err => {
         console.log(err);
       });
@@ -74,8 +54,7 @@ export class PassagemAereaEditComponent implements OnInit {
     this.passagemaereaForm = this.formBuilder.group({
       'codigo' : [null, Validators.required],
       'preco' : [null, Validators.required],
-      'vooIda' : [null, Validators.required],
-      'vooVolta' : [null, Validators],
+      'voo' : [null, Validators.required]
     });
   }
 
@@ -85,8 +64,7 @@ export class PassagemAereaEditComponent implements OnInit {
       this.passagemaereaForm.setValue({
         codigo: data.codigo,
         preco: data.preco,
-        vooIda:data.vooIda,
-        vooVolta: data.vooVolta
+        voo:data.voo
       });
     });
   }

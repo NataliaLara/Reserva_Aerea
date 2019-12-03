@@ -1,5 +1,6 @@
 <div class="button-row">
   <a mat-raised-button color="primary" [routerLink]="['/reservas']"><mat-icon>list</mat-icon></a>
+  Reserva Aérea
 </div>
 <form [formGroup]="reservaForm" (ngSubmit)="onFormSubmit(reservaForm.value)">
 
@@ -17,13 +18,13 @@
   </div>
 -->
   <mat-form-field class="example-full-width">
-    <input matInput [matDatepicker]="picker" formControlName="dataIda" placeholder="Data de ida">
+    <input matInput [matDatepicker]="picker" formControlName="dataIda" placeholder="Data da ida">
     <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
     <mat-datepicker #picker></mat-datepicker>
   </mat-form-field>
 
   <mat-form-field class="example-full-width">
-    <input matInput [matDatepicker]="picker2" formControlName="dataVolta" placeholder="Data de volta">
+    <input matInput [matDatepicker]="picker2" formControlName="dataVolta" placeholder="Data da volta">
     <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
     <mat-datepicker #picker2></mat-datepicker>
   </mat-form-field>
@@ -44,7 +45,7 @@
   </mat-form-field>
 
   <mat-form-field>
-    <mat-label>Destino</mat-label>
+    <mat-label>Cidade Destino</mat-label>
     <mat-select formControlName="destino">
       <mat-option  *ngFor="let destino of destinos" [value]="destino">
         {{destino.cidade}}
