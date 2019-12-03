@@ -11,12 +11,12 @@
 
     <ng-container matColumnDef="dataIda">
       <th mat-header-cell *matHeaderCellDef> Data de Ida</th>
-      <td mat-cell *matCellDef="let element"> {{element.dataIda| date:"dd/MM/yyyy HH:mm"}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.dataIda| date:"dd/MM/yyyy"}} </td>
     </ng-container>
 
     <ng-container matColumnDef="dataVolta">
       <th mat-header-cell *matHeaderCellDef>Data de Volta</th>
-      <td mat-cell *matCellDef="let element"> {{element.dataVolta| date:"dd/MM/yyyy HH:mm"}} </td>
+      <td mat-cell *matCellDef="let element"> {{element.dataVolta| date:"dd/MM/yyyy"}} </td>
     </ng-container>
 
     <ng-container matColumnDef="origem">
