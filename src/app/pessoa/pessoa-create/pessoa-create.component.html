@@ -1,0 +1,34 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/pessoas']"><mat-icon>list</mat-icon></a>
+  Pessoas
+</div>
+<form [formGroup]="pessoaForm" (ngSubmit)="onFormSubmit(pessoaForm.value)">
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Nome" formControlName="nome"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!pessoaForm.get('nome').valid && pessoaForm.get('nome').touched">Nome</span>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="CPF" formControlName="cpf"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!pessoaForm.get('cpf').valid && pessoaForm.get('cpf').touched">CPF</span>
+    </mat-error>
+  </mat-form-field>
+
+  <mat-form-field class="example-full-width">
+    <input matInput placeholder="Email" formControlName="email"
+           [errorStateMatcher]="matcher">
+    <mat-error>
+      <span *ngIf="!pessoaForm.get('email').valid && pessoaForm.get('email').touched">Email</span>
+    </mat-error>
+  </mat-form-field>
+  
+  <div class="button-row">
+    <button type="submit" [disabled]="!pessoaForm.valid" mat-raised-button color="primary"><mat-icon>save</mat-icon></button>
+  </div>
+</form>

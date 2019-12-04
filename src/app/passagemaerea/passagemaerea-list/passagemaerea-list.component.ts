@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class PassagemAereaListComponent implements OnInit {
 
   passagensaereas: any;
-  displayedColumns = ['codigo', 'preco', 'dataPartida','dataChegada'];
+  displayedColumns = ['codigo', 'preco', 'dataPartida','dataChegada','origem','destino'];
   dataSource = new PassagemAereaDataSource(this.apiPassagemAerea);
 
   constructor(private apiPassagemAerea: PassagemAereaService ) { }

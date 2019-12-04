@@ -29,11 +29,18 @@ import { ReservaListComponent } from './reserva/reserva-list/reserva-list.compon
 import { ReservaCreateComponent } from './reserva/reserva-create/reserva-create.component';
 import { ReservaDetailComponent } from './reserva/reserva-detail/reserva-detail.component';
 import { ReservaEditComponent } from './reserva/reserva-edit/reserva-edit.component';
+import { ReservaVooComponent } from './reserva/reserva-voo/reserva-voo.component';
 
 import { PassagemAereaListComponent } from './passagemaerea/passagemaerea-list/passagemaerea-list.component';
 import { PassagemAereaCreateComponent } from './passagemaerea/passagemaerea-create/passagemaerea-create.component';
 import { PassagemAereaDetailComponent } from './passagemaerea/passagemaerea-detail/passagemaerea-detail.component';
 import { PassagemAereaEditComponent } from './passagemaerea/passagemaerea-edit/passagemaerea-edit.component';
+
+import { PessoaListComponent } from './pessoa/pessoa-list/pessoa-list.component';
+import { PessoaCreateComponent } from './pessoa/pessoa-create/pessoa-create.component';
+import { PessoaDetailComponent } from './pessoa/pessoa-detail/pessoa-detail.component';
+import { PessoaEditComponent } from './pessoa/pessoa-edit/pessoa-edit.component';
+
 
 import {
   MatInputModule,
@@ -62,6 +69,7 @@ import {AccordionModule} from 'primeng/accordion';
 import {MatDatepickerModule } from '@angular/material/datepicker';
 import{MatNativeDateModule } from '@angular/material';
 import {CalendarModule} from 'primeng/calendar';
+import {SplitButtonModule} from 'primeng/splitbutton';
 
 
 const appRoutes: Routes = [
@@ -159,6 +167,11 @@ const appRoutes: Routes = [
     component: ReservaEditComponent,
     data: { title: 'Edit Reserva'  }
   },
+  {    
+    path: 'reserva-voo',
+    component: ReservaEditComponent,
+    data: { title: 'Reserva Voo'  }
+  },
   {
     path: 'passagemaerea-create',
     component: PassagemAereaCreateComponent,
@@ -178,6 +191,26 @@ const appRoutes: Routes = [
     path: 'passagemaerea-edit/:id',
     component: PassagemAereaEditComponent,
     data: { title: 'Edit Passagem Aerea'  }
+  },
+  {
+    path: 'pessoa-create',
+    component: PessoaCreateComponent,
+    data: { title: 'Create Pessoa' }
+  },
+  {
+    path: 'pessoas',
+    component: PessoaListComponent,
+    data: { title: 'Pessoa List' }
+  },
+  {
+    path: 'pessoa-details/:id',
+    component: PessoaDetailComponent,
+    data: { title: 'Pessoa Details' }
+  },
+  {    
+    path: 'pessoa-edit/:id',
+    component: PessoaEditComponent,
+    data: { title: 'Edit Pessoa'  }
   }
 
 ];
@@ -203,10 +236,15 @@ const appRoutes: Routes = [
     ReservaCreateComponent,
     ReservaDetailComponent,
     ReservaEditComponent,
+    ReservaVooComponent ,
     PassagemAereaListComponent,
     PassagemAereaCreateComponent,
     PassagemAereaDetailComponent,
-    PassagemAereaEditComponent
+    PassagemAereaEditComponent,
+    PessoaListComponent,
+    PessoaCreateComponent,
+    PessoaDetailComponent,
+    PessoaEditComponent
   ],
   imports: [
     RouterModule.forRoot(appRoutes),
@@ -239,7 +277,8 @@ const appRoutes: Routes = [
     MatRadioModule,
     MatDatepickerModule,
     MatNativeDateModule,
-    CalendarModule
+    CalendarModule,
+    SplitButtonModule,
   ],
   providers: [
     MatDatepickerModule, 

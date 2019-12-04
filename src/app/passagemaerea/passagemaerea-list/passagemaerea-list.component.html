@@ -1,5 +1,6 @@
 <div class="button-row">
   <a mat-raised-button color="primary" [routerLink]="['/passagemaerea-create']"><mat-icon>add</mat-icon></a>
+  Passagens Aéreas
 </div>
 <div class="example-container mat-elevation-z8">
   <table mat-table #table [dataSource]="dataSource">
@@ -22,7 +23,17 @@
     <ng-container matColumnDef="dataChegada">
         <th mat-header-cell *matHeaderCellDef>Data de chegada</th>
         <td mat-cell *matCellDef="let element"> {{element.voo.dataChegada | date:"dd/MM/yyyy HH:mm"}} </td>
-      </ng-container>
+    </ng-container>
+
+    <ng-container matColumnDef="origem">
+        <th mat-header-cell *matHeaderCellDef>Origem</th>
+        <td mat-cell *matCellDef="let element"> {{element.voo.origem.cidade}} </td>
+    </ng-container>
+
+    <ng-container matColumnDef="destino">
+        <th mat-header-cell *matHeaderCellDef>Destino</th>
+        <td mat-cell *matCellDef="let element"> {{element.voo.destino.cidade}} </td>
+    </ng-container>
 
     <tr mat-header-row *matHeaderRowDef="displayedColumns"></tr>
     <tr mat-row *matRowDef="let row; columns: displayedColumns;" [routerLink]="['/passagemaerea-details/', row._id]"></tr>

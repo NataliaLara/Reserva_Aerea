@@ -1,0 +1,20 @@
+<div class="button-row">
+  <a mat-raised-button color="primary" [routerLink]="['/pessoas']"><mat-icon>list</mat-icon></a>
+</div>
+<mat-card class="example-card">
+  
+  <mat-card-content>
+    <dl>
+      <dt>Nome:</dt>
+      <dd>{{pessoa.nome}}</dd>
+      <dt>CPF:</dt>
+      <dd>{{pessoa.cpf}}</dd>
+      <dt>Email:</dt>
+      <dd>{{pessoa.email}}</dd>
+    </dl>
+  </mat-card-content>
+  <mat-card-actions>
+    <a mat-raised-button color="primary" [routerLink]="['/pessoa-edit', pessoa._id]"><mat-icon>edit</mat-icon></a>
+    <a mat-raised-button color="warn" (click)="deletePessoa(pessoa._id)"><mat-icon>delete</mat-icon></a>
+  </mat-card-actions>
+</mat-card>

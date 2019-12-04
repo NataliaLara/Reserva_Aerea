@@ -11,14 +11,14 @@
     </mat-error>
   </mat-form-field>
 
-  <div class="ui-g-12 ui-md-4">
-    <h3>Data de Partida</h3>
-    <p-calendar [(ngModel)]="dataPartida" [showTime]="true" formControlName="dataPartida"></p-calendar>
+  <div class="example-full-width">
+      <h3>Data de partida</h3>
+      <p-calendar [(ngModel)]="date1" formControlName="dataPartida"  [showTime]="true"></p-calendar>
   </div>
 
-  <div class="ui-g-12 ui-md-4">
-    <h3>Data de Chegada</h3>
-    <p-calendar [(ngModel)]="dataChegada" [showTime]="true" formControlName="dataChegada"></p-calendar>
+  <div class="example-full-width">
+      <h3>Data de chegada</h3>
+      <p-calendar [(ngModel)]="date2" formControlName="dataChegada"  [showTime]="true"></p-calendar>
   </div>
 
   <mat-form-field class="example-full-width">

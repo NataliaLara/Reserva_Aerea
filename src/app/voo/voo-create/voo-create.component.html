@@ -12,18 +12,29 @@
     </mat-error>
   </mat-form-field>
 
+  <div class="example-full-width">
+      <h3>Data de partida</h3>
+      <p-calendar [(ngModel)]="date1" formControlName="dataPartida"  [showTime]="true"></p-calendar>
+  </div>
+
+  <div class="example-full-width">
+      <h3>Data de chegada</h3>
+      <p-calendar [(ngModel)]="date2" formControlName="dataChegada"  [showTime]="true"></p-calendar>
+  </div>
+
+<!--
   <mat-form-field class="example-full-width">
       <input matInput [matDatepicker]="picker" formControlName="dataPartida" placeholder="Data de partida">
       <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
       <mat-datepicker #picker></mat-datepicker>
     </mat-form-field>
-  
+ 
     <mat-form-field class="example-full-width">
       <input matInput [matDatepicker]="picker2" formControlName="dataChegada" placeholder="Data de chegada">
       <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
       <mat-datepicker #picker2></mat-datepicker>
     </mat-form-field>
-
+--> 
   <mat-form-field class="example-full-width">
     <input matInput placeholder="Passagens Disponíveis" formControlName="passagensDisp"
            [errorStateMatcher]="matcher">
@@ -51,21 +62,6 @@
       </mat-option>
     </mat-select>
   </mat-form-field>
-
-
-<!--
-  <mat-form-field >
-    <input matInput [matDatepicker]="picker" placeholder="Data de partida" formControlName="dataPartida">
-    <mat-datepicker-toggle matSuffix [for]="picker"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
-
-  <mat-form-field >
-    <input matInput [matDatepicker]="picker2" placeholder="Data de chegada" formControlName="dataChegada">
-    <mat-datepicker-toggle matSuffix [for]="picker2"></mat-datepicker-toggle>
-    <mat-datepicker #picker></mat-datepicker>
-  </mat-form-field>
--->
   
   
   <div class="button-row">

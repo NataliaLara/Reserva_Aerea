@@ -11,7 +11,7 @@ import { Observable } from 'rxjs';
 export class ReservaListComponent implements OnInit {
 
   reservas: any;
-  displayedColumns = ['pessoas', 'origem', 'destino','dataIda','dataVolta'];
+  displayedColumns = ['pessoas', 'origem', 'destino','dataIda','dataVolta','contatoParentesco'];
   dataSource = new ReservaDataSource(this.apiReserva);
 
   constructor(private apiReserva: ReservaService ) { }

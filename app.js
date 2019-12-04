@@ -16,6 +16,7 @@ var enderecoRouter = require('./routes/endereco');
 var vooRouter = require('./routes/voo');
 var reservaRouter = require('./routes/reserva');
 var passagemaereaRouter = require('./routes/passagemaerea');
+var pessoaRouter = require('./routes/pessoa');
 
 var app = express();
 
@@ -48,12 +49,19 @@ app.use('/reserva-details/:id', express.static(path.join(__dirname, 'dist/reserv
 app.use('/reserva-create', express.static(path.join(__dirname, 'dist/reservaaerea')));
 app.use('/reserva-edit/:id', express.static(path.join(__dirname, 'dist/reservaaerea')));
 app.use('/apireserva', reservaRouter);
+app.use('/reserva-voo/', express.static(path.join(__dirname, 'dist/reservaaerea')));
 
 app.use('/passagensaereas', express.static(path.join(__dirname, 'dist/reservaaerea')));
 app.use('/passagemaerea-details/:id', express.static(path.join(__dirname, 'dist/reservaaerea')));
 app.use('/passagemaerea-create', express.static(path.join(__dirname, 'dist/reservaaerea')));
 app.use('/passagemaerea-edit/:id', express.static(path.join(__dirname, 'dist/reservaaerea')));
 app.use('/apipassagemaerea', passagemaereaRouter);
+
+app.use('/pessoas', express.static(path.join(__dirname, 'dist/reservaaerea')));
+app.use('/pessoa-details/:id', express.static(path.join(__dirname, 'dist/reservaaerea')));
+app.use('/pessoa-create', express.static(path.join(__dirname, 'dist/reservaaerea')));
+app.use('/pessoa-edit/:id', express.static(path.join(__dirname, 'dist/reservaaerea')));
+app.use('/apipessoa', pessoaRouter);
 
 app.use('/inicio', express.static(path.join(__dirname, 'dist/reservaaerea')));
 

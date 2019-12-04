@@ -19,6 +19,7 @@ export class ReservaEditComponent implements OnInit {
   pessoas:Number;
   dataIda:Date;
   dataVolta: Date;
+  contatoParentesco:String;
   origem:{
     pais: String, 
     cidade: String, 
@@ -51,8 +52,7 @@ export class ReservaEditComponent implements OnInit {
       'pessoas' : [null, Validators.required],
       'dataIda' : [null, Validators.required],
       'dataVolta' : [null, Validators],
-      'origem' : [null, Validators.required],
-      'destino' : [null, Validators.required]
+      'contatoParentesco' : [null, Validators.required]
     });
   }
 
@@ -64,7 +64,8 @@ export class ReservaEditComponent implements OnInit {
         dataIda: data.dataIda,
         dataVolta: data.dataVolta,
         origem: data.origem,
-        destino: data.destino
+        destino: data.destino,
+        contatoParentesco:" "
       });
     });
   }

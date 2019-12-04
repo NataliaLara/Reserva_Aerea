@@ -19,7 +19,11 @@
     </dl>
   </mat-card-content>
   <mat-card-actions>
+    <a mat-raised-button color="accent" [routerLink]="['/pessoa-create']"><mat-icon>add</mat-icon></a>
+    Pessoas
+    <!--
     <a mat-raised-button color="primary" [routerLink]="['/passagemaerea-edit', passagemaerea._id]"><mat-icon>edit</mat-icon></a>
     <a mat-raised-button color="warn" (click)="deletePassagemAerea(passagemaerea._id)"><mat-icon>delete</mat-icon></a>
+    -->
   </mat-card-actions>
 </mat-card>

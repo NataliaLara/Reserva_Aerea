@@ -15,7 +15,8 @@ var ReservaSchema = new mongoose.Schema({
     siglaestado: { type: String, default: 'MG' }
   },
   dataIda: Date,
-  dataVolta:Date
+  dataVolta:Date,
+  contatoParentesco:String
 });
 
 module.exports = mongoose.model('Reserva', ReservaSchema);

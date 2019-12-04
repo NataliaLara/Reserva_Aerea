@@ -19,11 +19,11 @@
     </mat-error>
   </mat-form-field>
 
-  <mat-form-field>
+  <mat-form-field class="example-full-width">
     <mat-label>Voo</mat-label>
     <mat-select formControlName="voo">
       <mat-option  *ngFor="let voo of voos" [value]="voo">
-        {{voo.dataPartida| date:"dd/MM/yyyy HH:mm"}} - {{voo.Chegada| date:"dd/MM/yyyy HH:mm"}}
+          {{voo.dataPartida| date:"dd/MM/yyyy HH:mm"}}({{voo.origem.cidade}}) - {{voo.dataChegada | date:"dd/MM/yyyy HH:mm"}}({{voo.destino.cidade}})
       </mat-option>
     </mat-select>
   </mat-form-field>
